@@ -8,10 +8,11 @@
 <body>
 <div class="side_block" id="side_block">
     <div class="profile">
-        <img class="user-avatar" src="lib/images/avatars/def0.jpg">
+        <img class="user-avatar" src="lib/images/avatars/def(0).jpg">
         <a class="side_menu_link">Profile</a>
         <a class="side_menu_link">Exit</a>
     </div>
+
     <a href="/" class="side_menu_link">Some Link</a>
     <a href="/" class="side_menu_link">Some Link</a>
     <a href="/" class="side_menu_link">Some Link</a>
