@@ -4,6 +4,8 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    color: white;
+    font-family: cursive;
 }
 
 a {
@@ -15,8 +17,16 @@ a:hover {
     color: red;
 }
 
+button:hover {
+    background: #ff4cb9;
+}
+
 .btn {
     border: none;
+}
+
+.logo {
+    font-size: xxx-large;
 }
 
 .side_block {
@@ -65,4 +75,142 @@ a:hover {
     background: black;
     width: 100vw;
     min-height: 100vh;
+}
+
+.wrapper {
+    margin: 4vh 2vw;
+    width: 96vw;
+    min-height: 92vh;
+}
+
+
+.prev, .next, .year {
+    border: none;
+    background: none;
+    min-width: 10vw;
+    font-size: xx-large;
+    margin: 1vh 1vw;
+}
+
+.prev:hover, .next:hover, .year:hover, .curr_month:hover, .curr_day:hover {
+    background: none;
+}
+
+.date_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.curr_month, .curr_day {
+    background: none;
+    border: none;
+    font-family: cursive;
+    font-size: large;
+}
+
+.month {
+    background: #6161ff;
+    color: white;
+    width: 96vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.days {
+    height: 70vh;
+}
+
+.days_table {
+    /*background: #6161ff;*/
+    width: 100%;
+    height: 100%;
+    margin: 1vh 3vw;
+}
+
+.day_num {
+    border: 2px solid #ffffff;
+    border-radius: 15%;
+    padding: 2vh 3vw;
+    color: white;
+    font-family: cursive;
+}
+
+.empty {
+    background: #b7b7b7;
+}
+
+.busy {
+    background: #6161ff;
+}
+
+.other_month {
+    background: black;
+}
+
+.active {
+    background: #1ce01c;
+}
+
+.event {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 98%;
+    min-height: 10vh;
+    margin: 2vh 0;
+    padding: 1vh 1vw;
+}
+
+.event:hover .settings_btn {
+    display: flex;
+}
+
+.event .fa-bars, .btn, .btn:hover {
+    background: none;
+}
+
+.content {
+    width: 96%;
+}
+
+.settings_btn {
+    display: none;
+    width: 4vw;
+    height: 10vh;
+    align-items: center;
+
+}
+
+.passed {
+    background: #f05dfd;
+}
+
+.current {
+    background: #1ce01c;
+}
+
+.coming {
+    background: #6161ff;
+}
+
+.create_new_event {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contr_btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: xx-large;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.contr_btn:hover {
+    background: none;
 }
