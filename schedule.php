@@ -59,9 +59,9 @@ switch ($month) {
             <div class="date_wrapper">
                 <button class="curr_day" value="<?php echo $day; ?>"><?php echo $day; ?></button>
                 </br>
-                <button class="curr_month" value="<?php echo $month; ?>"><?php echo $month_text;?></button>
+                <button class="curr_month" value="<?php echo $month; ?>"><?php echo $month_text; ?></button>
                 </br>
-                <button class="year" value="<?php echo $year; ?>"><i><?php echo $year;?>></i></button>
+                <button class="year" value="<?php echo $year; ?>"><i><?php echo $year; ?>></i></button>
             </div>
             <button class="next" id="nextDay"><i>></i></button>
         </div>
@@ -110,6 +110,6 @@ switch ($month) {
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="lib/js/script.js"></script>
 <script src="lib/js/goTo.js"></script>
-<script src="lib/js/changingDate.js"></script>
+<script src="lib/js/navigationSchedule.js"></script>
 </body>
 </html>

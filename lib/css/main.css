@@ -106,7 +106,7 @@ button:hover {
     background: none;
     border: none;
     font-family: cursive;
-    font-size: large;
+    font-size: xx-large;
 }
 
 .month {
@@ -147,7 +147,11 @@ button:hover {
 }
 
 .other_month {
-    background: black;
+    background: none;
+    width: 2vw;
+    height: 2vh;
+    color: rgba(0,0,0,0);
+    opacity: 0%;
 }
 
 .active {

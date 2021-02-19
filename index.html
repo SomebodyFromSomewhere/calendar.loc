@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>redirecting</title>
+    <script type="application/javascript">
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = mm + '/' + dd + '/' + yyyy;
+        window.location.replace("http://calendar.loc/main.php?&month=" + parseInt(mm) + "&year=" + yyyy);
+    </script>
+</head>
+<body style="margin: 0;background: dodgerblue;">
+
+</body>
+</html>
