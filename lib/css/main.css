@@ -83,6 +83,10 @@ button:hover {
     min-height: 92vh;
 }
 
+.curr_month .year {
+    text-align: center;
+}
+
 
 .prev, .next, .year {
     border: none;
