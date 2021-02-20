@@ -70,20 +70,20 @@ if (($_GET['year'] < 1900 || $_GET['year'] > 2150) || ($_GET['month'] < 1 || $_G
             <div class="month">
                 <button class="prev" id="prevMonth"><i><</i></button>
                 <div class="date_wrapper">
-                    <select class="curr_month">
+                    <select class="curr_month" id="curr_month">
                         <?php
                         $month_arr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                         for ($i = 1; $i < 13; $i++) {
                             if ($i == intval($_GET['month'])) {
-                                echo "<option value='" . $i . "' selected>" . $month_arr[($i - 1)] . "</option>";
+                                echo "<option value='" . $i . "' selected id='" . $i . "'>" . $month_arr[($i - 1)] . "</option>";
                             } else {
-                                echo "<option value='" . $i . "'>" . $month_arr[$i - 1] . "</option>";
+                                echo "<option value='" . $i . "'id='" . $i . "'>" . $month_arr[$i - 1] . "</option>";
                             }
                         }
                         ?>
                     </select>
                     </br>
-                    <select class="year">
+                    <select class="year" id="year">
                         <?php
                         for ($i = 1900; $i <= 2150; $i++) {
                             if ($i == intval($_GET['year'])) {
