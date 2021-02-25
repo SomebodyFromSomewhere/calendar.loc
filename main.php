@@ -144,6 +144,7 @@ if (($_GET['year'] < 1900 || $_GET['year'] > 2150) || ($_GET['month'] < 1 || $_G
     <script src="lib/js/script.js"></script>
     <script src="lib/js/goTo.js"></script>
     <script src="lib/js/navigationMain.js"></script>
+    <script src="lib/js/changingColor.js"></script>
     </body>
     </html>
 <?php } ?>

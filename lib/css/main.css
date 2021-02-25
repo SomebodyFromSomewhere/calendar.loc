@@ -21,6 +21,12 @@ button:hover {
     background: #ff4cb9;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .btn {
     border: none;
 }
@@ -57,6 +63,54 @@ button:hover {
     background-color: DodgerBlue;
     padding: 0;
     margin: 0;
+}
+
+.sbr-btn {
+    background: none;
+    color: white;
+    border: none;
+    font-size: large;
+    font-family: cursive;
+    padding: 0;
+    margin: 2vh auto;
+    margin-top: 0;
+}
+
+.sbr-menu {
+    display: block;
+    position: fixed;
+    background: red;
+    top: 24vh;
+    left: 15vw;
+    min-width: 20vw;
+}
+
+.menu-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.sbr-btn:hover {
+    background: none;
+    color: red;
+}
+
+.change_color {
+    display: none;
+}
+
+.choosen-color {
+
+}
+
+.color_choose {
+    display: block;
+    width: 2vw;
+    height: 4vh;
+    background: #fff;
+    border-radius: 100%;
+    margin: auto 0;
 }
 
 .profile {
@@ -162,7 +216,7 @@ button:hover {
     background: none;
     width: 2vw;
     height: 2vh;
-    color: rgba(0,0,0,0);
+    color: rgba(0, 0, 0, 0);
     opacity: 0%;
 }
 
