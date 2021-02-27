@@ -22,11 +22,18 @@ if (($_GET['year'] < 1900 || $_GET['year'] > 2150) || ($_GET['month'] < 1 || $_G
                 return 28;
             }
         }
-        switch (intval($_GET['month']) % 2) {
-            case 0:
+        if (intval($_GET['month']) < 8) {
+            if ((intval($_GET['month']) % 2) == 0) {
                 return 30;
-            case 1:
+            } else {
                 return 31;
+            }
+        } else {
+            if ((intval($_GET['month']) % 2) == 1) {
+                return 30;
+            } else {
+                return 31;
+            }
         }
     }
 
@@ -75,9 +82,9 @@ if (($_GET['year'] < 1900 || $_GET['year'] > 2150) || ($_GET['month'] < 1 || $_G
                         $month_arr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                         for ($i = 1; $i < 13; $i++) {
                             if ($i == intval($_GET['month'])) {
-                                echo "<option value='" . $i . "' selected id='" . $i . "'>" . $month_arr[($i - 1)] . "</option>";
+                                echo "<option class='select-item' value='" . $i . "' selected id='" . $i . "'>" . $month_arr[($i - 1)] . "</option>";
                             } else {
-                                echo "<option value='" . $i . "'id='" . $i . "'>" . $month_arr[$i - 1] . "</option>";
+                                echo "<option class='select-item' value='" . $i . "'id='" . $i . "'>" . $month_arr[$i - 1] . "</option>";
                             }
                         }
                         ?>
@@ -87,9 +94,9 @@ if (($_GET['year'] < 1900 || $_GET['year'] > 2150) || ($_GET['month'] < 1 || $_G
                         <?php
                         for ($i = 1900; $i <= 2150; $i++) {
                             if ($i == intval($_GET['year'])) {
-                                echo "<option value='" . $i . "' selected>" . $i . "</option>";
+                                echo "<option class='select-item' value='" . $i . "' selected>" . $i . "</option>";
                             } else {
-                                echo "<option value='" . $i . "'>" . $i . "</option>";
+                                echo "<option class='select-item' value='" . $i . "'>" . $i . "</option>";
                             }
                         }
                         ?>

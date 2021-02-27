@@ -1,16 +1,23 @@
 <?php
-if (($_GET['month'] % 2) == 0) {
-    if ($_GET['month'] == 2) {
-        if (($_GET['year'] % 4) == 0) {
-            $last_month_day = 29;
-        } else {
-            $last_month_day = 28;
-        }
-    } else {
+if (intval($_GET['month']) < 8) {
+    if ((intval($_GET['month']) % 2) == 0) {
         $last_month_day = 30;
+    } else {
+        $last_month_day = 31;
     }
 } else {
-    $last_month_day = 31;
+    if ((intval($_GET['month']) % 2) == 1) {
+        $last_month_day = 30;
+    } else {
+        $last_month_day = 31;
+    }
+}
+if ($_GET['month'] == 2) {
+    if ((intval($_GET['year']) % 4) == 0) {
+        $last_month_day = 29;
+    } else {
+        $last_month_day = 28;
+    }
 }
 
 if (($_GET['year'] < 1900 || $_GET['year'] > 2150) || ($_GET['month'] < 1 || $_GET['month'] > 12) || ($_GET['day'] < 0 || $_GET['day'] > ($last_month_day))) {
@@ -75,11 +82,41 @@ if (($_GET['year'] < 1900 || $_GET['year'] > 2150) || ($_GET['month'] < 1 || $_G
             <div class="month">
                 <button class="prev" id="prevDay"><i><</i></button>
                 <div class="date_wrapper">
-                    <button class="curr_day" value="<?php echo $day; ?>"><?php echo $day; ?></button>
+                    <select class="curr_day" id="currDay">
+                        <?php
+                        for ($i = 1; $i <= $last_month_day; $i++) {
+                            if ($i == intval($_GET['day'])) {
+                                echo "<option class='select-item' value='" . $i . "' selected='selected' id='" . $i . "'>" . $i . "</option>";
+                            } else {
+                                echo "<option class='select-item' value='" . $i . "'id='" . $i . "'>" . $i . "</option>";
+                            }
+                        }
+                        ?></select>
                     </br>
-                    <button class="curr_month" value="<?php echo $month; ?>"><?php echo $month_text; ?></button>
+                    <select class="curr_month" id="currMonth">
+                        <?php
+                        $month_arr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                        for ($i = 1; $i < 13; $i++) {
+                            if ($i == intval($_GET['month'])) {
+                                echo '<option class="select-item" value="' . $i . '"id="' . $i . '" selected="selected">' . $month_arr[($i - 1)] . '</option>';
+                            } else {
+                                echo "<option class='select-item' value='" . $i . "'id='" . $i . "'>" . $month_arr[$i - 1] . "</option>";
+                            }
+                        }
+                        ?>
+                    </select>
                     </br>
-                    <button class="year" value="<?php echo $year; ?>"><i><?php echo $year; ?>></i></button>
+                    <select class="year" id="year">
+                        <?php
+                        for ($i = 1900; $i <= 2150; $i++) {
+                            if ($i == intval($_GET['year'])) {
+                                echo "<option class='select-item' value='" . $i . "' selected='selected'>" . $i . "</option>";
+                            } else {
+                                echo "<option class='select-item' value='" . $i . "'>" . $i . "</option>";
+                            }
+                        }
+                        ?>
+                    </select>
                 </div>
                 <button class="next" id="nextDay"><i>></i></button>
             </div>
@@ -130,6 +167,7 @@ if (($_GET['year'] < 1900 || $_GET['year'] > 2150) || ($_GET['month'] < 1 || $_G
     <script src="lib/js/script.js"></script>
     <script src="lib/js/goTo.js"></script>
     <script src="lib/js/navigationSchedule.js"></script>
+    <script src="lib/js/changingColor.js"></script>
     </body>
     </html>
 <?php } ?>
